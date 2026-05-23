@@ -26,9 +26,17 @@ jobs:
     - name: Build with Maven
       run: mvn -B clean package --file pom.xml
 
-    # WiX Toolset is natively available on windows-latest GitHub Action runners
+    # Setup clean input directory to avoid bundling duplicate files/launch4j exes from target/
+    - name: Prepare jpackage input
+      run: |
+        mkdir jpackage-input
+        copy target/smartplayer-1.0.0-shaded.jar jpackage-input/
+
     - name: Run jpackage to build Windows Installer
       run: |
+        # Ensure WiX is in PATH for windows-latest
+        $env:PATH += ";C:\Program Files (x86)\WiX Toolset v3.14\bin;C:\Program Files (x86)\WiX Toolset v3.11\bin"
+        
         $APP_VERSION = "${{ github.ref_name }}".TrimStart("v")
         jpackage `
           --type exe `
@@ -36,7 +44,7 @@ jobs:
           --app-version $APP_VERSION `
           --vendor "Suraj Meher" `
           --description "A modern JavaFX + VLCJ desktop video player" `
-          --input target/ `
+          --input jpackage-input/ `
           --main-jar smartplayer-1.0.0-shaded.jar `
           --main-class com.smartplayer.Launcher `
           --icon src/main/resources/icons/app.ico `
@@ -45,11 +53,14 @@ jobs:
           --win-menu-group "SmartPlayer" `
           --win-dir-chooser `
           --win-per-user-install `
-          --dest installer
+          --dest installer `
+          --verbose
 
     - name: Rename Installer
       run: |
-        Move-Item -Path "installer\SmartPlayer-$APP_VERSION.exe" -Destination "installer\SmartPlayerSetup.exe" -ErrorAction SilentlyContinue
+        $APP_VERSION = "${{ github.ref_name }}".TrimStart("v")
+        Get-ChildItem -Path "installer" # Debug print
+        Move-Item -Path "installer\SmartPlayer-$APP_VERSION.exe" -Destination "installer\SmartPlayerSetup.exe"
 
     - name: Release to GitHub
       uses: softprops/action-gh-release@v2
