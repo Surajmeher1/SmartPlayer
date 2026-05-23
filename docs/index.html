@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPlayer | Cinematic Media Experience</title>
+    <meta name="description" content="A modern JavaFX + VLCJ desktop video player with a cinematic interface.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+    <!-- Background Gradients -->
+    <div class="bg-gradient bg-red"></div>
+    <div class="bg-gradient bg-blue"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header slide-down">
+            <div class="logo-container">
+                <img src="logo.png" alt="SmartPlayer Logo" class="logo">
+                <h1 class="logo-text">SmartPlayer</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="https://github.com/Surajmeher1/SmartPlayer" target="_blank" class="nav-btn github-btn">
+                    <svg height="24" viewBox="0 0 16 16" width="24" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                    GitHub
+                </a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <main class="hero">
+            <div class="hero-content fade-in-up">
+                <div class="badge">Open Source Desktop App</div>
+                <h2 class="hero-title">Your Media,<br>Reimagined.</h2>
+                <p class="hero-subtitle">A powerful JavaFX desktop player built with VLCJ. Featuring a modern glassmorphism UI, auto-hiding floating controls, and a cinematic viewing experience.</p>
+                <div class="hero-cta">
+                    <a href="https://github.com/Surajmeher1/SmartPlayer/releases" class="btn primary-btn">Download for Windows</a>
+                    <a href="https://github.com/Surajmeher1/SmartPlayer" class="btn secondary-btn">View Source</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual fade-in-up delayed">
+                <div class="app-mockup">
+                    <div class="mockup-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="mockup-body">
+                        <img src="logo.png" alt="App Preview" class="mockup-img">
+                        <div class="mockup-overlay">
+                            <div class="play-btn-mock">▶</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h3 class="section-title fade-in-up">Why SmartPlayer?</h3>
+            <div class="feature-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">✨</div>
+                    <h4>Cinematic UI</h4>
+                    <p>Gorgeous glassmorphism overlays and dynamic gradients that make your videos pop.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🚀</div>
+                    <h4>VLC Powered</h4>
+                    <p>Built on the rock-solid VLC engine via VLCJ. If VLC can play it, SmartPlayer can play it.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">⌨️</div>
+                    <h4>Keyboard Ready</h4>
+                    <p>Full keyboard shortcut support for seeking, volume, subtitles, and playback controls.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Built by Suraj Meher. Open source under the MIT License.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
