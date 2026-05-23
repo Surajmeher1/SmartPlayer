@@ -347,3 +347,70 @@ footer {
     .hero-title { font-size: 3rem; }
     .hero-cta { flex-direction: column; }
 }
+
+/* Glowing Button Styling */
+.btn.glow {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.4), 0 0 40px rgba(255, 51, 102, 0.2);
+    animation: pulse-glow 3s infinite alternate;
+}
+
+.btn-text {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.btn-subtext {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 20px rgba(0, 204, 255, 0.4), 0 0 40px rgba(255, 51, 102, 0.2); }
+    100% { box-shadow: 0 0 30px rgba(0, 204, 255, 0.6), 0 0 60px rgba(255, 51, 102, 0.4); }
+}
+
+/* Release Notes */
+.release-notes {
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.release-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+}
+
+.release-date {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.release-list {
+    list-style: none;
+}
+
+.release-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.badge.new { background: rgba(39, 201, 63, 0.15); color: #27c93f; border-color: rgba(39, 201, 63, 0.3); }
+.badge.imp { background: rgba(255, 189, 46, 0.15); color: #ffbd2e; border-color: rgba(255, 189, 46, 0.3); }
+.badge.fix { background: rgba(255, 95, 86, 0.15); color: #ff5f56; border-color: rgba(255, 95, 86, 0.3); }
